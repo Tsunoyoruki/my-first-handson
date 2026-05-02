@@ -9,24 +9,14 @@
     <header>
       <h1><a href="">My first hands-on</a></h1>
     </header>
-    <article>
-      <h2><a href="">First Post</a></h2>
+    {% for post in posts %}
 
-      <p>Hello this is my first hands on. 4/21/2026. 10 am</p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam maiores
-        sapiente, praesentium fugiat eveniet saepe alias dolores, aliquid quod
-        molestiae officiis facere, hic qui illum quasi laboriosam ipsam fuga.
-        Corrupti nobis saepe culpa eveniet, facere libero placeat vel, impedit
-        sed dolores, doloremque nulla dolorem nam sunt asperiores tenetur
-        reprehenderit nisi veritatis magnam perferendis. Ducimus omnis assumenda
-        ad delectus dolorem sapiente, harum numquam neque voluptatem, dolores
-        fugit quis exercitationem accusantium. Quas modi perferendis consectetur
-        sapiente quam, blanditiis quasi perspiciatis, soluta quo quos excepturi
-        repellat facere accusamus magni dolores eligendi provident nesciunt quod
-        repudiandae aperiam alias, eum sequi laborum placeat? Consectetur, nisi.
-      </p>
+    <article>
+      <time>published: {{ post.published_date }}</time>
+      <h2><a href="">{{ post.title }}</a></h2>
+      <p>{{ post.text|linebreaksbr }}</p>
     </article>
+    {% endfor %}
 
     <article>
       <h2><a href="">Second Post</a></h2>
@@ -46,3 +36,5 @@
     </article>
   </body>
 </html>
+
+{% for post in posts %} {{post}} {% endfor %}
